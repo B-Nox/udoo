@@ -1,0 +1,74 @@
+[
+	{
+		"id" : "0",
+		"title" : "Droidcon 2016 poster",
+		"author" : "Synesthesia",
+		"date" : "2015",
+		"place" : "Turin, Italy",
+		"description" : "A poster to promote the awesome Droidcon 2015!",
+		"images" : [
+
+			{
+				"path" : "images/image-0-0.png",
+				"description" : "The poster"
+			},
+
+			{
+				"path" : "images/image-0-1.png",
+				"description" : "The poster"
+			}
+
+		],
+
+		"videos" : [
+			{
+				"path" : "videos/video-0-0.mp4",
+				"description" : "Making of the poster"
+			}
+		],
+
+		"audios" : [
+			{
+				"path" : "audios/audio-0-0.ogg",
+				"description" : "Poster's history"
+			}
+		]
+	},
+
+	{
+		"id" : "1",
+		"title" : "I3P Kangaroo",
+		"author" : "I3P",
+		"date" : "2015",
+		"place" : "Turin, Italy",
+		"description" : "This is the logo of I3P, Incubatore Imprese Innovative Politecnico Torino",
+		"images" : [
+
+			{
+				"path" : "images/image-1-0.png",
+				"description" : "The kangaroo"
+			},
+
+			{
+				"path" : "images/image-1-1.png",
+				"description" : "The text"
+			}
+
+		],
+
+		"videos" : [
+			{
+				"path" : "videos/video-1-0.mp4",
+				"description" : "Making of the kangaroo"
+			}
+		],
+
+		"audios" : [
+			{
+				"path" : "audios/audio-1-0.ogg",
+				"description" : "Logo's history"
+			}
+		]
+	}
+
+]
