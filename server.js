@@ -61,7 +61,7 @@ app.use(commonMiddleware);
 //app.use('/api/images', express.static('public/images'));
 
 //*
-app.get('/api/images/:name', function (req, res, next) {
+var imagesHandler = function (req, res, next) {
 
   var options = {
       root: __dirname + '/public/images'
@@ -80,8 +80,56 @@ app.get('/api/images/:name', function (req, res, next) {
     }
   });
 
-});
+};
+
+var audiosHandler = function (req, res, next) {
+
+  var options = {
+      root: __dirname + '/public/audios'
+  };
+
+  var fileName = req.params.name;
+  logger.info('Requested:', fileName);
+    
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      logger.error(err);
+      res.status(err.status).end();
+    }
+    else {
+      logger.info('Sent:', fileName);
+    }
+  });
+
+};
+
+var videosHandler = function (req, res, next) {
+
+  var options = {
+      root: __dirname + '/public/videos'
+  };
+
+  var fileName = req.params.name;
+  logger.info('Requested:', fileName);
+    
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      logger.error(err);
+      res.status(err.status).end();
+    }
+    else {
+      logger.info('Sent:', fileName);
+    }
+  });
+
+};
+
+
 //*/
+
+app.get('/api/images/:name', imagesHandler);
+app.get('/api/videos/:name', videosHandler);
+app.get('/api/audios/:name', audiosHandler);
 
 // all of our routes will be prefixed with /api
 app.use('/api', router);
@@ -91,37 +139,9 @@ app.use('/images', express.static('public/images'));
 //*/
 
 //*
-app.get('/images/:name', function (req, res, next) {
-
-  /*
-    var options = {
-    root: __dirname + '/public/',
-    //dotfiles: 'deny',
-    headers: {
-        'x-timestamp': Date.now(),
-        'x-sent': true
-    }
-  };
-  //*/
-    
-  var options = {
-      root: __dirname + '/public/images'
-  };
-
-  var fileName = req.params.name;
-  logger.info('Requested:', fileName);
-    
-  res.sendFile(fileName, options, function (err) {
-    if (err) {
-      logger.error(err);
-      res.status(err.status).end();
-    }
-    else {
-      logger.info('Sent:', fileName);
-    }
-  });
-
-});
+app.get('/images/:name', imagesHandler);
+app.get('/videos/:name', videosHandler);
+app.get('/audios/:name', audiosHandler);
 //*/
 
 //*
