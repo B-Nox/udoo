@@ -9,13 +9,13 @@
 		"images" : [
 
 			{
-				"path" : "images/image-0-0.png",
+				"path" : "images/droidcon.jpg",
 				"description" : "The poster"
 			},
 
 			{
-				"path" : "images/image-0-1.png",
-				"description" : "The poster"
+				"path" : "images/iblio.jpg",
+				"description" : "The sponsor"
 			}
 
 		],
@@ -45,7 +45,7 @@
 		"images" : [
 
 			{
-				"path" : "images/image-1-0.png",
+				"path" : "images/incubator.jpg",
 				"description" : "The kangaroo"
 			},
 
