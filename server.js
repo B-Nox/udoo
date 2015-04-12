@@ -9,7 +9,7 @@ var bunyan     = require('bunyan');         // load bunyan
 // configure app to use bunyan as logger
 var logger = bunyan.createLogger({name: 'ArtworkServer'});
 
-var port = process.env.PORT || 80;        // set our port
+var port = process.env.PORT || 3000;        // set our port
 
 // CONTROLLERS LOAD
 // =============================================================================
@@ -56,12 +56,73 @@ router.get('/', function (req, res) {
 // REGISTER OUR ROUTES 
 // =============================================================================
 
-app.use('/api/images', express.static('public/images'));
+app.use(commonMiddleware);
+
+//app.use('/api/images', express.static('public/images'));
+
+//*
+app.get('/api/images/:name', function (req, res, next) {
+
+  var options = {
+      root: __dirname + '/public/images'
+  };
+
+  var fileName = req.params.name;
+  logger.info('Requested:', fileName);
+    
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      logger.error(err);
+      res.status(err.status).end();
+    }
+    else {
+      logger.info('Sent:', fileName);
+    }
+  });
+
+});
+//*/
 
 // all of our routes will be prefixed with /api
 app.use('/api', router);
 
+/*
 app.use('/images', express.static('public/images'));
+//*/
+
+//*
+app.get('/images/:name', function (req, res, next) {
+
+  /*
+    var options = {
+    root: __dirname + '/public/',
+    //dotfiles: 'deny',
+    headers: {
+        'x-timestamp': Date.now(),
+        'x-sent': true
+    }
+  };
+  //*/
+    
+  var options = {
+      root: __dirname + '/public/images'
+  };
+
+  var fileName = req.params.name;
+  logger.info('Requested:', fileName);
+    
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      logger.error(err);
+      res.status(err.status).end();
+    }
+    else {
+      logger.info('Sent:', fileName);
+    }
+  });
+
+});
+//*/
 
 //*
 app.use('/', function(req, res) {
