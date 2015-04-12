@@ -5,7 +5,6 @@ var artworkCtrl = require('../database');
 
 
 
-
 // ARTWORKS exported functions
 // =============================================================================
 
@@ -13,7 +12,7 @@ var artworkCtrl = require('../database');
 // =============================================================================
 exports.query = function(req, res, next){
 
-    var artworks = {message:'This route does not provide data.'};
+    var artworks = artworkCtrl.getArtworks();
     
     //sending the response
     res.status(200).send(artworks);
@@ -27,7 +26,11 @@ exports.get = function(req, res, next){
     
     var artwork = artworkCtrl.findById(req.params.id);
     
-    //sending the response
-    res.status(200).send(artwork);
+    if( artwork === null ) {
+        res.status(404).send('Artwork not found.');
+    } else {
+        //sending the response
+        res.status(200).send(artwork);
+    }
     
 };

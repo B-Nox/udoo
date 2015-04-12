@@ -55,12 +55,19 @@ router.get('/', function (req, res) {
 
 // REGISTER OUR ROUTES 
 // =============================================================================
+
+app.use('/api/images', express.static('public/images'));
+
 // all of our routes will be prefixed with /api
 app.use('/api', router);
 
+app.use('/images', express.static('public/images'));
+
+//*
 app.use('/', function(req, res) {
     res.json({ message: 'Artworks server is working' });
 });
+//*/
 
 // ATTACH the error Middleware
 // =============================================================================
