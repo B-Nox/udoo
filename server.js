@@ -9,7 +9,7 @@ var bunyan     = require('bunyan');         // load bunyan
 // configure app to use bunyan as logger
 var logger = bunyan.createLogger({name: 'ArtworkServer'});
 
-var port = process.env.PORT || 3000;        // set our port
+var port = process.env.PORT || 80;        // set our port
 
 // CONTROLLERS LOAD
 // =============================================================================
