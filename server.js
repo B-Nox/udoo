@@ -124,7 +124,6 @@ var videosHandler = function (req, res, next) {
 
 };
 
-
 //*/
 
 app.get('/api/images/:name', imagesHandler);

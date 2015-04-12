@@ -6,33 +6,8 @@
 		"date" : "2015",
 		"place" : "Turin, Italy",
 		"description" : "A poster to promote the awesome Droidcon 2015!",
-		"images" : [
-
-			{
-				"path" : "images/droidcon.jpg",
-				"description" : "The poster"
-			},
-
-			{
-				"path" : "images/iblio.jpg",
-				"description" : "The sponsor"
-			}
-
-		],
-
-		"videos" : [
-			{
-				"path" : "videos/video-0-0.mp4",
-				"description" : "Making of the poster"
-			}
-		],
-
-		"audios" : [
-			{
-				"path" : "audios/audio-0-0.ogg",
-				"description" : "Poster's history"
-			}
-		]
+		"image" : "images/droidcon.jpg",
+		"audio" : "audios/audio-0-0.ogg"
 	},
 
 	{
@@ -42,33 +17,8 @@
 		"date" : "2015",
 		"place" : "Turin, Italy",
 		"description" : "This is the logo of I3P, Incubatore Imprese Innovative Politecnico Torino",
-		"images" : [
-
-			{
-				"path" : "images/incubator.jpg",
-				"description" : "The kangaroo"
-			},
-
-			{
-				"path" : "images/image-1-1.png",
-				"description" : "The text"
-			}
-
-		],
-
-		"videos" : [
-			{
-				"path" : "videos/video-1-0.mp4",
-				"description" : "Making of the kangaroo"
-			}
-		],
-
-		"audios" : [
-			{
-				"path" : "audios/audio-1-0.ogg",
-				"description" : "Logo's history"
-			}
-		]
+		"image" : "images/incubator.jpg",
+		"audio" : "audios/audio-1-0.ogg"
 	}
 
 ]
